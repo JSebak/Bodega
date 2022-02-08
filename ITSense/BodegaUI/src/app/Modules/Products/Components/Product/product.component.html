@@ -1,0 +1,148 @@
+    <!--Card-->
+    <mdb-card class="card" mdbWavesEffect >
+      <!--Card image-->
+      <div class="row">
+        <!--Card content-->
+        <div >
+          <mdb-card-body class="cardBody">
+
+            <!--Title-->
+              <button class="no-link" (click)="Open()">{{mock.name}}</button>
+              <a class="activator px-3 mr-2">
+                <DropdownComponent
+                [options]="options"
+                (selected)="MenuSelected($event)">
+                <img src="https://cdn-icons-png.flaticon.com/512/6695/6695583.png" alt="menu" class="menuBtn">
+                </DropdownComponent>
+              </a>
+            <hr class="hr-light">
+            <mdb-card-text class="dark-text">
+                {{mock.id}}
+            </mdb-card-text>
+          </mdb-card-body>
+        </div>
+      </div>
+    </mdb-card>
+    <!--/.Card-->
+
+  <div mdbModal #productModal="mdbModal" class="modal fade comic-mod" id="productModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" >
+        <div class="modal-content" >
+
+                <button type="button" class="close" data-dismiss="modal" style="position: relative; left: 45%; outline: none;" aria-label="Close" (click)="CloseModal()">
+                  <img src="./assets/btn-close.png" style="max-width: 0.7cm;">
+                </button>
+            <div class="modal-body">
+
+              <div class="row">
+                <div class="content">
+                  <p class="Title">
+                    <strong>{{mock.name}}</strong>
+                  </p>
+                  <p>
+                    {{mock.id}}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="btn-group " role="group" aria-label="Basic example">
+                <button mdbBtn type="button" class="modalButton danger waves-light" mdbWavesEffect (click)="Dispatch()">
+                 ¡Despachar el producto!
+                </button>
+                <button mdbBtn type="button"  class="modalButton waves-light" mdbWavesEffect (click)="CloseModal()">
+                 Cancelar
+                </button>
+
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div mdbModal #confirmationModal="mdbModal" class="modal fade comic-mod" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document" >
+      <div class="modal-content" style="width: 813px; position: absolute;left: -40%;top: 50%;">
+
+              <button type="button" class="close" data-dismiss="modal" style="position: relative; left: 45%; outline: none;" aria-label="Close" (click)="CloseConfirmation()">
+                <img src="./assets/btn-close.png" style="max-width: 0.7cm;">
+              </button>
+          <div class="modal-body">
+
+            <div class="row">
+              <div style="overflow-y: auto; max-height: 400px;">
+                <p class="Title">
+                  <strong>!Estas a punto de despachar el producto! </strong>
+                  <br>
+                  <strong>¿Continuar?</strong>
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="btn-group " role="group" aria-label="Basic example" style="width: 813px;left: 15px;">
+                <button mdbBtn type="button" class="modalButton waves-light" mdbWavesEffect (click)="Confirm()">
+                 ¡Despachar!
+                </button>
+                <button mdbBtn type="button"  class="modalButton waves-light" mdbWavesEffect (click)="CloseConfirmation()">
+                 cancelar
+                </button>
+
+              </div>
+            </div>
+          </div>
+
+      </div>
+  </div>
+</div>
+
+<div mdbModal #editModal="mdbModal" class="modal fade comic-mod" id="editModal" tabindex="-1" role="dialog"
+  aria-labelledby="edit modal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <button type="button" class="close" data-dismiss="modal" style="z-index: 3;"
+        aria-label="Close" (click)="CloseModal()">
+        <img src="./assets/btn-close.png" style="max-width: 0.7cm;">
+      </button>
+      <div class="modal-body">
+        <div class="modalHeader">
+          <p class="Title">
+            <strong>Editar el producto</strong>
+          </p>
+          <p class="message">
+            Por favor completa el siguiente formulario
+          </p>
+        </div>
+
+        <form [formGroup]="editForm" name="editForm" novalidate>
+            <label class="center-block">Nombre:
+              <input class="form-control" type="text" name="name" formControlName="name">
+            </label>
+            <fieldset>
+              <legend>Marcar como defectuoso</legend>
+              <input type="checkbox" id="defectiveCheck" class="form-control" name="status" formControlName="status" checked='this.editForm.controls["status"].value' >
+            </fieldset>
+          <div *ngIf="editForm.invalid && (editForm.dirty || editForm.touched)" class="alert alert-danger">
+            <div *ngIf='editForm.controls["name"].invalid'>
+              El producto debe tener un nombre.
+            </div>
+          </div>
+        </form>
+        <div class="row">
+          <div class="btn-group modalFoot" role="group">
+            <button mdbBtn type="submit" [disabled]='!editForm.valid || this.editForm.controls["name"].value==""' form="productForm" (click)="UpdateProduct()"
+              class="modalButton waves-light" mdbWavesEffect>
+              Guardar
+            </button>
+            <button mdbBtn type="button" class="modalButton waves-light" mdbWavesEffect (click)="CloseModal()">
+              Cancelar
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!--
+<spinner [active]="spinner"></spinner> -->

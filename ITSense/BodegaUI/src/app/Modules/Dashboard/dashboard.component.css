@@ -1,0 +1,68 @@
+.ngx-pagination .current {
+  padding: 0.1875rem 0.625rem;
+  background: #ff3547;
+  color: #fefefe;
+  cursor: default;
+}
+.headerMain{
+  padding: 2%;
+  margin:1.2rem 0 0 0;
+  background-color: rgb(59, 59, 59);
+}
+.subTitle{
+  color: #fefefe;
+}
+button{
+  margin:0.2rem;
+  border-radius: 0.18rem;
+  border: none;
+}
+.sortBtn{
+  background-color: #fefefe;
+  color: rgba(0, 2, 0, 0.774);
+
+}
+.newBtn{
+  background-color: rgb(26, 39, 226);
+  color: #fefefe;
+}
+.productStock{
+  overflow-y: auto;
+}
+.modalHeader{
+  text-align: center;
+}
+.modal-content{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+}
+.modalFoot{
+position: relative;
+}
+.modalButton{
+  background-color: rgba(0, 0, 0, 0.85);
+}
+.modalButton:disabled{
+  background-color: rgba(78, 78, 78, 0.774);
+}
+.modalButton:hover{
+  background-color: white;
+  color:black;
+}
+.close{
+  position: relative;
+  width: 1.5rem;
+  left: 94% !important;
+  outline: none;
+}
+.defectiveCheck{
+  outline: none;
+}
+.modal-body{
+  display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: space-around;
+}

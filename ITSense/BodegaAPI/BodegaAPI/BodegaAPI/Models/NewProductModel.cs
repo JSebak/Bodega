@@ -10,7 +10,6 @@ namespace BodegaAPI.Models
     {
         [Required]
         public string Name { get; set; }
-        public int Status { get; set; }
-        public bool Defective { get; set; }
+        public bool Status { get; set; }
     }
 }

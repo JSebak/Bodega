@@ -1,0 +1,10 @@
+.mainList{
+  background-color: rgba(25, 119, 213, 0.5);
+}
+.productList{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+

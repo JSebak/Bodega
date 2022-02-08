@@ -1,4 +1,5 @@
-﻿using BodegaAPI.Data;
+﻿using AutoMapper;
+using BodegaAPI.Data;
 using BodegaAPI.Data.Entities;
 using BodegaAPI.Models;
 using System;
@@ -11,9 +12,11 @@ namespace BodegaAPI.Services
     public class ProductRepository : IProductRepository
     {
         private readonly ProductContext _productContext;
-        public ProductRepository(ProductContext productContext)
+        private readonly IMapper _mapper;
+        public ProductRepository(ProductContext productContext, IMapper mapper)
         {
             _productContext = productContext ?? throw new ArgumentNullException(nameof(productContext));
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
         public bool ProductExists(Guid id)
@@ -45,16 +48,33 @@ namespace BodegaAPI.Services
             return product.Entity;
         }
 
-        public Product UpdateProduct(Guid id, NewProductModel newProduct)
+        public Product UpdateProduct(Product newProduct)
         {
-            var product = GetProduct(id);
+            if (!ProductExists(newProduct.Id)) return null;
+            var product = GetProduct(newProduct.Id);
             _productContext.Entry(product).CurrentValues.SetValues(newProduct);
             Save();
-            return GetProduct(id);
+            return GetProduct(newProduct.Id);
         }
         public bool Save()
         {
             return _productContext.SaveChanges() > 0;
+        }
+
+        public bool ValidateProduct(ProductModel product)
+        {
+            return ValidateProduct(_mapper.Map<NewProductModel>(product));
+        }
+        public bool ValidateProduct(NewProductModel product)
+        {
+            var name = false;
+
+            if (!String.IsNullOrWhiteSpace(product.Name))
+            {
+                name = true;
+            }
+
+            return name;
         }
     }
 }

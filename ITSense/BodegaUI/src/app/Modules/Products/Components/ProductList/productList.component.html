@@ -1,0 +1,11 @@
+
+<div class="mainList">
+  <div class="productList">
+    <div *ngFor = "let product of filteredList">
+      <div class="cardContainer">
+        <ProductComponent [product]='product'></ProductComponent>
+      </div>
+    </div>
+  </div>
+</div>
+<spinner [active]="spinner"></spinner>

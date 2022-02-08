@@ -1,0 +1,10 @@
+<mdb-navbar SideClass="navbar navbar-dark black justify-content-between navbar navbar-expand-lg fixed-top">
+  <mdb-navbar-brand>
+      <img src="https://cdn-icons-png.flaticon.com/512/226/226904.png" style="height: 45px;width: auto;">
+  </mdb-navbar-brand>
+  <form class="form-inline waves-light" mdbWavesEffect>
+    <div class="mySearchBox" >
+      <input mdbInput type="text" name="text"  (blur)="onKey($event)" (keyup.enter)="onKey($event)" id="form1" class="form-control" placeholder="Presiona Enter para buscar un producto">
+    </div>
+</form>
+</mdb-navbar>

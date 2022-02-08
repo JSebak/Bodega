@@ -9,7 +9,7 @@ namespace BodegaAPI.Models
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public int Status { get; set; }
-        public bool Defective { get; set; }
+        public bool Status { get; set; }
+
     }
 }

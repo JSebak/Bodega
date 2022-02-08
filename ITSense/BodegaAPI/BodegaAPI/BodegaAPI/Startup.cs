@@ -42,7 +42,13 @@ namespace BodegaAPI
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BodegaAPI", Version = "v1" });
             });
             services.AddCors(options => {
-                options.AddPolicy("MyCorsImplementationPolicy", builder => builder.WithOrigins("*"));
+                options.AddPolicy("MyCorsImplementationPolicy", builder =>
+                { 
+                    builder.WithOrigins("*");
+                    builder.AllowAnyMethod();
+                    builder.AllowAnyHeader();
+                }
+                );
             });
         }
 

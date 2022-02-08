@@ -24,7 +24,7 @@ namespace BodegaAPI.Controllers
         public ProductController(IProductRepository productRepository, IMapper mapper)
         {
             _productRepository = productRepository ?? throw new ArgumentNullException(nameof(productRepository));
-            _mapper = mapper;
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
         [HttpGet]
@@ -60,15 +60,18 @@ namespace BodegaAPI.Controllers
         [HttpPost]
         public IActionResult RegisterProduct([FromBody] NewProductModel newProduct)
         {
+            if (!_productRepository.ValidateProduct(newProduct)) return BadRequest("Invalid product");
             var mappedProduct = _mapper.Map<Product>(newProduct);
             var product = _mapper.Map<ProductModel>(_productRepository.EnterProduct(mappedProduct));
             return Created($"api/product/{product.Id}",product);
         }
 
-        [HttpPut("{id}")]
-        public IActionResult UpdateProduct(Guid id, [FromBody] NewProductModel modifiedProduct)
+        [HttpPut]
+        public IActionResult UpdateProduct([FromBody] ProductModel modifiedProduct)
         {
-            var product = _mapper.Map<ProductModel>(_productRepository.UpdateProduct(id, modifiedProduct));
+            if (!_productRepository.ValidateProduct(modifiedProduct)) return BadRequest("Invalid product");
+            var mappedProduct = _mapper.Map<Product>(modifiedProduct);
+            var product = _mapper.Map<ProductModel>(_productRepository.UpdateProduct(mappedProduct));
             return Ok(product);
         }
     }

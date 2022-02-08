@@ -9,6 +9,9 @@ namespace BodegaAPI.Services
     {
         public bool ProductExists(Guid id);
 
+        public bool ValidateProduct(ProductModel product);
+        public bool ValidateProduct(NewProductModel product);
+
         public List<Product> GetProducts();
 
         public Product GetProduct(Guid id);
@@ -17,7 +20,7 @@ namespace BodegaAPI.Services
 
         public Product EnterProduct(Product newProduct);
 
-        public Product UpdateProduct(Guid id, NewProductModel newProduct);
+        public Product UpdateProduct(Product newProduct);
 
     }
 }

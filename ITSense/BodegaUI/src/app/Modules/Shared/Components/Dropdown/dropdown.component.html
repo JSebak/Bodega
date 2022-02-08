@@ -1,0 +1,18 @@
+<div class="dropdown" mdbDropdown>
+  <button mdbDropdownToggle type="button" mdbBtn  class="dropdown waves-light" style="background-color: transparent;color: black;"
+    mdbWavesEffect>
+    <ng-content>
+    </ng-content>
+  </button>
+
+  <div class="dropdown-menu">
+      <a class="dropdown-item" (click)='Select("Edit")'>
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828270.png" alt="edit">
+         Editar
+      </a>
+      <a class="dropdown-item" (click)='Select("Delete")'>
+        <img src="https://cdn-icons-png.flaticon.com/512/812/812853.png" alt="edit">
+         Borrar
+      </a>
+  </div>
+</div>

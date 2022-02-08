@@ -14,6 +14,7 @@ namespace BodegaAPI.Data.Profiles
         {
             CreateMap<Product, NewProductModel>().ReverseMap();
             CreateMap<Product, ProductModel>().ReverseMap();
+            CreateMap<ProductModel, NewProductModel>().ReverseMap();
         }
     }
 }

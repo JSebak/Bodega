@@ -1,0 +1,39 @@
+.card{
+  margin: 0.5rem 1rem 0.5rem 1rem;
+}
+.no-link{
+  background:none;
+  font-weight: 700;
+  font-size: 1.5rem;
+  border:none;
+  outline: none;
+  margin: 1mm;
+  margin-bottom: 0.2cm;
+  cursor: pointer;
+}
+.no-link:hover{
+  color: rgb(53, 138, 230);
+}
+.cardBody{
+  text-align: center;
+}
+.menuBtn{
+  height: 1.3rem;
+  width: 1.3rem;
+  cursor: pointer;
+  border:none;
+}
+.menuBtn:hover{
+  height: 1.45rem;
+  width: 1.45rem;
+}
+.hr-light{
+  width: 80%;
+}
+.modal-body{
+  display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: space-around;
+}

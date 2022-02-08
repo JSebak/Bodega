@@ -1,0 +1,82 @@
+<header>
+  <navbar ngModel="search"></navbar>
+</header>
+<div class="Layout">
+  <div class="headerMain">
+    <h1 class="subTitle">Productos en stock</h1>
+    <div class="dropdown" mdbDropdown>
+      <button mdbDropdownToggle type="button" mdbBtn  class="dropdown waves-light" style="background-color: transparent;color: black;"
+        mdbWavesEffect>
+        Ver:
+      </button>
+      <div class="dropdown-menu">
+          <a class="dropdown-item" (click)='SetFilter("Todos")'>
+             Todos
+          </a>
+          <a class="dropdown-item" (click)='SetFilter("Defectuosos")'>
+             Defectuosos
+          </a>
+          <a class="dropdown-item" (click)='SetFilter("Optimos")'>
+            Optimos
+         </a>
+      </div>
+    </div>
+      <button class="newBtn" (click)="OpenModal()">Registra un producto</button>
+    <div>Mostrando los productos</div>
+  </div>
+  <div class="productStock">
+    <ProductList></ProductList>
+  </div>
+</div>
+
+<div mdbModal #newModal="mdbModal" class="modal fade comic-mod" id="charModal" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <button type="button" class="close" data-dismiss="modal" style="position: relative; left: 45%; outline: none;"
+        aria-label="Close" (click)="CloseModal()">
+        <img src="./assets/btn-close.png" style="max-width: 0.7cm;">
+      </button>
+      <div class="modal-body">
+        <div class="modalHeader">
+          <p class="Title">
+            <strong>Registro de producto</strong>
+          </p>
+          <p class="message">
+            Por favor completa el siguiente formulario
+          </p>
+        </div>
+
+        <form [formGroup]="productForm" name="productForm" novalidate>
+            <label class="center-block">Nombre:
+              <input class="form-control" type="text" name="name" formControlName="name">
+            </label>
+            <fieldset>
+              <legend>¿El producto tiene algún defecto?</legend>
+              <input type="checkbox" id="defectiveCheck" class="form-control" name="status" formControlName="status">
+            </fieldset>
+          <div *ngIf="productForm.invalid && (productForm.dirty || productForm.touched)" class="alert alert-danger">
+            <div *ngIf='productForm.controls["name"].invalid'>
+              Por favor ingresa el nombre del producto.
+            </div>
+          </div>
+        </form>
+        <div class="row">
+          <div class="btn-group modalFoot" role="group">
+            <button mdbBtn type="submit" [disabled]='!productForm.valid || this.productForm.controls["name"].value==""' form="productForm" (click)="CreateProduct()"
+              class="modalButton waves-light" mdbWavesEffect>
+              Registrar
+            </button>
+            <button mdbBtn type="button" class="modalButton waves-light" mdbWavesEffect (click)="CloseModal()">
+              Cancelar
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<spinner [active]="spinner"></spinner>
