@@ -1,6 +1,6 @@
 .mainList{
   overflow-y: auto;
-  height: 60vh;
+  height: 58vh;
 }
 .productList{
   display: flex;
@@ -17,6 +17,14 @@
   .cardBox{
     width: 27%;
   }
-
 }
-
+@media (max-height:600px){
+  .mainList{
+    height: 45vh;
+  }
+}
+@media (min-height: 801px){
+  .mainList{
+    height: 70vh;
+  }
+}
