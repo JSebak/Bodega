@@ -13,4 +13,10 @@
   font-size: 3rem;
   color:white;
 }
+@media (min-width: 600px){
+  .cardBox{
+    width: 27%;
+  }
+
+}
 

@@ -4,7 +4,7 @@
     <div class="noProducts" *ngIf="filteredList.length==0">
       No hay productos
     </div>
-    <div *ngFor = "let product of filteredList">
+    <div class="cardBox" *ngFor = "let product of filteredList">
       <div class="cardContainer">
         <ProductComponent [product]='product'></ProductComponent>
       </div>

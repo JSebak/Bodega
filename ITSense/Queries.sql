@@ -1,7 +1,9 @@
+
+
 USE [master]
 GO
 
-/****** Object:  Database [Bodega]    Script Date: 5/02/2022 3:25:58 p. m. ******/
+/****** Object:  Database [Bodega]    Script Date: 8/02/2022 12:22:07 p. m. ******/
 CREATE DATABASE [Bodega]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -116,7 +118,7 @@ GO
 USE [Bodega]
 GO
 
-/****** Object:  Table [dbo].[Products]    Script Date: 5/02/2022 3:27:50 p. m. ******/
+/****** Object:  Table [dbo].[Products]    Script Date: 8/02/2022 12:22:21 p. m. ******/
 SET ANSI_NULLS ON
 GO
 
@@ -126,8 +128,7 @@ GO
 CREATE TABLE [dbo].[Products](
 	[Id] [uniqueidentifier] ROWGUIDCOL  NOT NULL,
 	[Name] [nvarchar](50) NOT NULL,
-	[Status] [int] NOT NULL,
-	[defective] [bit] NOT NULL,
+	[Status] [bit] NOT NULL,
  CONSTRAINT [PK_Product] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -136,5 +137,17 @@ CREATE TABLE [dbo].[Products](
 GO
 
 ALTER TABLE [dbo].[Products] ADD  CONSTRAINT [DF_Product_Id]  DEFAULT (newid()) FOR [Id]
+GO
+
+
+INSERT INTO [dbo].[Products]
+           ([Name]
+           ,[Status])
+     VALUES
+           ('Lavadora A21',0),
+		   ('Nevera X2470', 0),
+		   ('Horno B', 1),
+		   ('Secadora S32',0),
+		   ('Licuadora H2',1)
 GO
 
