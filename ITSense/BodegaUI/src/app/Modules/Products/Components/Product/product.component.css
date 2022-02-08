@@ -87,3 +87,7 @@ form{
   flex-wrap: wrap;
   justify-content: center;
 }
+.defective{
+  text-align: center;
+  color:  rgba(58, 58, 58, 0.726);
+}

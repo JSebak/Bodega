@@ -7,7 +7,7 @@
           <mdb-card-body class="cardBody">
             <!--Title-->
             <div class="titleCard">
-              <button class="no-link" (click)="Open()">{{mock.name}}</button>
+              <button class="no-link" (click)="Open()"  [ngStyle]="{'color':mock.status === false ? 'black' : 'red' }" > {{mock.name}}</button>
                 <DropdownComponent
                 [options]="options"
                 (selected)="MenuSelected($event)">
@@ -17,6 +17,7 @@
           </mdb-card-body>
         </div>
       </div>
+      <p class="defective" *ngIf="mock.status === true">Defectuoso</p>
       <p class="productId">
         {{mock.id}}
     </p>
