@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'My-Marvel-API'`, () => {
+  it(`should have as title 'BodegaUI'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('My-Marvel-API');
+    expect(app.title).toEqual('BodegaUI');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('My-Marvel-API app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('BodegaUI app is running!');
   });
 });

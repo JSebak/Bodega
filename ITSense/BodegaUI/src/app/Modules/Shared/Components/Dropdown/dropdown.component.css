@@ -4,10 +4,14 @@ img{
 }
 button{
   box-shadow: none;
+  width: 1.5rem;
 }
 button:hover{
   box-shadow: none;
 }
 button :active{
   box-shadow: none;
+}
+.dropdown{
+  width: fit-content;
 }

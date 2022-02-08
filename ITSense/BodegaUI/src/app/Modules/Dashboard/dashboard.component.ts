@@ -5,7 +5,6 @@ import { ProductsService } from "../Products/Services/products.service";
 import { SearchService } from "../Shared/Services/search.service";
 
 
-// TODO: Check create product
 @Component({
   selector: 'dashboard',
   templateUrl: './dashboard.component.html',
@@ -17,6 +16,7 @@ export class dashboard {
   newProduct: Product = new Product();
   stringSearch: string;
   spinner: boolean = false;
+  filter: string = "Todos";
 
 
 
@@ -62,6 +62,7 @@ export class dashboard {
 
   SetFilter(filter: string){
     this.searchService.filter.next(filter);
+    this.filter = filter;
   }
 
 

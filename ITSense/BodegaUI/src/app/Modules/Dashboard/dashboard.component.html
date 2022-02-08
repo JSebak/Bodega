@@ -5,7 +5,7 @@
   <div class="headerMain">
     <h1 class="subTitle">Productos en stock</h1>
     <div class="dropdown" mdbDropdown>
-      <button mdbDropdownToggle type="button" mdbBtn  class="dropdown waves-light" style="background-color: transparent;color: black;"
+      <button mdbDropdownToggle type="button" mdbBtn  class="dropdownSort waves-light"
         mdbWavesEffect>
         Ver:
       </button>
@@ -22,7 +22,10 @@
       </div>
     </div>
       <button class="newBtn" (click)="OpenModal()">Registra un producto</button>
-    <div>Mostrando los productos</div>
+    <div  class="currentFilter">
+      Mostrando los productos:
+      <p>{{filter}}</p>
+    </div>
   </div>
   <div class="productStock">
     <ProductList></ProductList>

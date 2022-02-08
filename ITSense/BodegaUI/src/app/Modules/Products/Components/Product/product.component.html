@@ -5,23 +5,21 @@
         <!--Card content-->
         <div >
           <mdb-card-body class="cardBody">
-
             <!--Title-->
+            <div class="titleCard">
               <button class="no-link" (click)="Open()">{{mock.name}}</button>
-              <a class="activator px-3 mr-2">
                 <DropdownComponent
                 [options]="options"
                 (selected)="MenuSelected($event)">
                 <img src="https://cdn-icons-png.flaticon.com/512/6695/6695583.png" alt="menu" class="menuBtn">
                 </DropdownComponent>
-              </a>
-            <hr class="hr-light">
-            <mdb-card-text class="dark-text">
-                {{mock.id}}
-            </mdb-card-text>
+            </div>
           </mdb-card-body>
         </div>
       </div>
+      <p class="productId">
+        {{mock.id}}
+    </p>
     </mdb-card>
     <!--/.Card-->
 
@@ -33,7 +31,6 @@
                   <img src="./assets/btn-close.png" style="max-width: 0.7cm;">
                 </button>
             <div class="modal-body">
-
               <div class="row">
                 <div class="content">
                   <p class="Title">
@@ -45,7 +42,7 @@
                 </div>
               </div>
             </div>
-            <div class="row">
+            <div class="buttonFooter">
               <div class="btn-group " role="group" aria-label="Basic example">
                 <button mdbBtn type="button" class="modalButton danger waves-light" mdbWavesEffect (click)="Dispatch()">
                  ¡Despachar el producto!
@@ -79,7 +76,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="btn-group " role="group" aria-label="Basic example" style="width: 813px;left: 15px;">
+              <div class="btn-group " role="group" aria-label="Basic example">
                 <button mdbBtn type="button" class="modalButton waves-light" mdbWavesEffect (click)="Confirm()">
                  ¡Despachar!
                 </button>

@@ -15,7 +15,7 @@ spinner: boolean = false;
 search: string='';
 filter: string='';
 productList: Product[];
-filteredList: Product[];
+filteredList: Product[]=[];
 
 constructor(private productService: ProductsService, private searchService: SearchService) {
   this.searchService.search.subscribe(value => {

@@ -1,6 +1,12 @@
 .card{
   margin: 0.5rem 1rem 0.5rem 1rem;
 }
+.card > .row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .no-link{
   background:none;
   font-weight: 700;
@@ -30,10 +36,53 @@
 .hr-light{
   width: 80%;
 }
+.modalHeader{
+  text-align: center;
+}
 .modal-body{
   display: flex;
     flex-direction: column;
     align-content: center;
     align-items: center;
     justify-content: space-around;
+    text-align: center;
+}
+.modal-content{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+}
+form{
+  margin: 0.5rem 0 1rem 0;
+}
+.Title{
+  font-size: 2rem;
+    font-weight: 500;
+}
+.btn-group > button{
+ margin: 0.5rem;
+ background-color: rgba(0, 0, 0, 0.85);
+}
+.modalButton:hover{
+  background-color: white !important;
+  color: black !important;
+}
+.titleCard{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.productId{
+  word-break: break-all;
+  text-align: center;
+  color: rgba(58, 58, 58, 0.85);
+
+}
+.buttonFooter{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }

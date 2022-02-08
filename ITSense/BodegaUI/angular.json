@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "My-Marvel-API": {
+    "BodegaUI": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/My-Marvel-API",
+            "outputPath": "dist/BodegaUI",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -81,10 +81,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "My-Marvel-API:build:production"
+              "browserTarget": "BodegaUI:build:production"
             },
             "development": {
-              "browserTarget": "My-Marvel-API:build:development"
+              "browserTarget": "BodegaUI:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -92,7 +92,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "My-Marvel-API:build"
+            "browserTarget": "BodegaUI:build"
           }
         },
         "test": {
@@ -115,5 +115,5 @@
       }
     }
   },
-  "defaultProject": "My-Marvel-API"
+  "defaultProject": "BodegaUI"
 }

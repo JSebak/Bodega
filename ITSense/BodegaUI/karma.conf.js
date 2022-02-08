@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/My-Marvel-API'),
+      dir: require('path').join(__dirname, './coverage/BodegaUI'),
       subdir: '.',
       reporters: [
         { type: 'html' },

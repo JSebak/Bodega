@@ -1,10 +1,16 @@
 .mainList{
-  background-color: rgba(25, 119, 213, 0.5);
+  overflow-y: auto;
+  height: 60vh;
 }
 .productList{
   display: flex;
   width: 100%;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+.noProducts{
+  height: 100%;
+  font-size: 3rem;
+  color:white;
 }
 
