@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cn2DmgZ24IZqw//whPLacWMdKn5O4BsbyzpKPXYZ0Zl4h4qPNCDpFCu62w83WYRjM4j7vU7CX6toRPbD+rbktw==",
+  "dgSpecHash": "9FS+k8DTJFz0lFG9PCnSiljkXY2jvm0lX8se5A4Ust9jUOAa4o6mR0TlFC0XR2fVFfVlDIqEoY5yLTxtQ4mbEw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Documents\\Entrevistas\\ITSense\\BodegaAPI\\BodegaAPI\\BodegaAPI\\BodegaAPI.csproj",
+  "projectFilePath": "C:\\Users\\user\\Documents\\Entrevistas\\ITSense\\BodegaAPI\\BodegaAPI\\BodegaAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

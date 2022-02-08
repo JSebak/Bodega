@@ -7727,11 +7727,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Documents\\Entrevistas\\ITSense\\BodegaAPI\\BodegaAPI\\BodegaAPI\\BodegaAPI.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Documents\\Entrevistas\\ITSense\\BodegaAPI\\BodegaAPI\\BodegaAPI.csproj",
       "projectName": "BodegaAPI",
-      "projectPath": "C:\\Users\\user\\Documents\\Entrevistas\\ITSense\\BodegaAPI\\BodegaAPI\\BodegaAPI\\BodegaAPI.csproj",
+      "projectPath": "C:\\Users\\user\\Documents\\Entrevistas\\ITSense\\BodegaAPI\\BodegaAPI\\BodegaAPI.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Documents\\Entrevistas\\ITSense\\BodegaAPI\\BodegaAPI\\BodegaAPI\\obj\\",
+      "outputPath": "C:\\Users\\user\\Documents\\Entrevistas\\ITSense\\BodegaAPI\\BodegaAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
